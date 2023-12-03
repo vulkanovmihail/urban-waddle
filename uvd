@@ -1,0 +1,13 @@
+    func effectValue(size: CGSize) -> ProjectionTransform {
+
+        let reducedValue = offsetValue - floor(offsetValue)
+       // let value = (-abs(0.5 - reducedValue) + 0.5) * 2
+        let value = (sin(4 * reducedValue * Double.pi))
+
+        let translation = CGFloat(30 * value)
+
+        let affineTransform = CGAffineTransform(translationX: translation, y: 0)
+
+        return ProjectionTransform(affineTransform)
+    }
+}
